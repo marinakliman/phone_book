@@ -26,3 +26,11 @@ def display_phonebook(phonebook):
     else:
         for i, entry in enumerate(phonebook):
             print(f"{i+1}. Фамилия: {entry['last_name']}, Имя: {entry['first_name']}, Отчество: {entry['middle_name']}, Телефон: {entry['phone_number']}")
+
+def search_phonebook(phonebook, query):
+    results = [entry for entry in phonebook if query in entry.values()]
+    if results:
+        for entry in results:
+            print(f"Фамилия: {entry['last_name']}, Имя: {entry['first_name']}, Отчество: {entry['middle_name']}, Телефон: {entry['phone_number']}")
+    else:
+        print("Запись не найдена.")
