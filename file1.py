@@ -57,3 +57,39 @@ def copy_entry(source_filename, target_filename, line_number):
         print("Запись успешно скопирована.")
     else:
         print("Неверный номер строки.")
+
+def main():
+    filename = 'phonebook.txt'
+    phonebook = load_phonebook(filename)
+    
+    while True:
+        print("\nТелефонный справочник")
+        print("1. Вывести все записи")
+        print("2. Добавить запись")
+        print("3. Найти запись")
+        print("4. Сохранить и выйти")
+        print("5. Копировать запись из одного файла в другой")
+        
+        choice = input("Выберите действие: ")
+        
+        if choice == '1':
+            display_phonebook(phonebook)
+        elif choice == '2':
+            add_entry(phonebook)
+        elif choice == '3':
+            query = input("Введите имя, фамилию или отчество для поиска: ")
+            search_phonebook(phonebook, query)
+        elif choice == '4':
+            save_phonebook(phonebook, filename)
+            print("Данные сохранены. До свидания!")
+            break
+        elif choice == '5':
+            source_filename = input("Введите имя исходного файла: ")
+            target_filename = input("Введите имя целевого файла: ")
+            line_number = int(input("Введите номер строки для копирования: "))
+            copy_entry(source_filename, target_filename, line_number)
+        else:
+            print("Неверный выбор, попробуйте еще раз.")
+
+if __name__ == "__main__":
+    main()
