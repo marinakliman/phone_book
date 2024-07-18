@@ -46,3 +46,14 @@ def add_entry(phonebook):
         'middle_name': middle_name,
         'phone_number': phone_number
     })
+
+def copy_entry(source_filename, target_filename, line_number):
+    source_phonebook = load_phonebook(source_filename)
+    if 1 <= line_number <= len(source_phonebook):
+        entry = source_phonebook[line_number - 1]
+        target_phonebook = load_phonebook(target_filename)
+        target_phonebook.append(entry)
+        save_phonebook(target_phonebook, target_filename)
+        print("Запись успешно скопирована.")
+    else:
+        print("Неверный номер строки.")
