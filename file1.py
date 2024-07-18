@@ -19,3 +19,10 @@ def save_phonebook(phonebook, filename):
     with open(filename, 'w', encoding='utf-8') as file:
         for entry in phonebook:
             file.write(f"{entry['last_name']},{entry['first_name']},{entry['middle_name']},{entry['phone_number']}\n")
+
+def display_phonebook(phonebook):
+    if not phonebook:
+        print("Справочник пуст.")
+    else:
+        for i, entry in enumerate(phonebook):
+            print(f"{i+1}. Фамилия: {entry['last_name']}, Имя: {entry['first_name']}, Отчество: {entry['middle_name']}, Телефон: {entry['phone_number']}")
