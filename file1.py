@@ -14,3 +14,8 @@ def load_phonebook(filename):
     except FileNotFoundError:
         print(f"Файл {filename} не найден, создаем новый справочник.")
     return phonebook
+
+def save_phonebook(phonebook, filename):
+    with open(filename, 'w', encoding='utf-8') as file:
+        for entry in phonebook:
+            file.write(f"{entry['last_name']},{entry['first_name']},{entry['middle_name']},{entry['phone_number']}\n")
