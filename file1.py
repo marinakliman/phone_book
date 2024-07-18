@@ -34,3 +34,15 @@ def search_phonebook(phonebook, query):
             print(f"Фамилия: {entry['last_name']}, Имя: {entry['first_name']}, Отчество: {entry['middle_name']}, Телефон: {entry['phone_number']}")
     else:
         print("Запись не найдена.")
+
+def add_entry(phonebook):
+    last_name = input("Введите фамилию: ")
+    first_name = input("Введите имя: ")
+    middle_name = input("Введите отчество: ")
+    phone_number = input("Введите номер телефона: ")
+    phonebook.append({
+        'last_name': last_name,
+        'first_name': first_name,
+        'middle_name': middle_name,
+        'phone_number': phone_number
+    })
