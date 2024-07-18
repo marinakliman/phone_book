@@ -1,0 +1,1 @@
+print(f"Фамилия: {entry['last_name']}, Имя: {entry['first_name']}, Отчество: {entry['middle_name']}, Телефон: {entry['phone_number']}")
